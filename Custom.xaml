@@ -1,0 +1,123 @@
+﻿<StackPanel Margin="-10,-12,-10,12">
+		<local:MyHint Text="注：本主页目前仍在试用阶段，出现任何问题请及时反馈。" />
+</StackPanel>
+
+<Border CornerRadius="8" Canvas.ZIndex="1" Margin="-10,0,-10,0">
+    <!-- 设置背景为图片 -->
+    <Border.Background>
+        <ImageBrush ImageSource="https://pic.imgdb.cn/item/66cca684d9c307b7e9e901cd.png"/>   
+    </Border.Background>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- 主图像和文本的容器 -->
+        <StackPanel Grid.Row="0" Margin="24,40,24,40">
+            <StackPanel HorizontalAlignment="Center">
+                <!-- 主图像 -->
+                <Image Height="120" MaxWidth="520" HorizontalAlignment="Center"
+                    Source="http://image.hhhhhy.kim/45/1699703777440.png"    />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            </StackPanel>
+        </StackPanel>
+
+        <!-- 绝对定位的容器来放置按钮 -->
+        <Grid>
+            <local:MyIconTextButton Margin="0,5,5,0" Height="40" Width="40"
+                HorizontalAlignment="Right" VerticalAlignment="Top"
+                EventType="刷新主页"
+                Logo="M256.455,8C322.724,8.119,382.892,34.233,427.314,76.685L463.029,40.97C478.149,25.851,504,36.559,504,57.941L504,192C504,205.255,493.255,216,480,216L345.941,216C324.559,216,313.851,190.149,328.97,175.029L370.72,133.279C339.856,104.38 299.919,88.372 257.49,88.006 165.092,87.208 87.207,161.983 88.0059999999999,257.448 88.764,348.009 162.184,424 256,424 297.127,424 335.997,409.322 366.629,382.444 371.372,378.283 378.535,378.536 382.997,382.997L422.659,422.659C427.531,427.531 427.29,435.474 422.177,440.092 378.202,479.813 319.926,504 256,504 119.034,504 8.001,392.967 8,256.002 7.999,119.193 119.646,7.755 256.455,8z"
+                Text="">
+                <local:MyIconTextButton.LayoutTransform>
+                    <ScaleTransform ScaleX="0.85" ScaleY="0.85"/>
+                </local:MyIconTextButton.LayoutTransform>
+            </local:MyIconTextButton>
+        </Grid>
+    </Grid>
+</Border>
+
+<local:MyCard Canvas.ZIndex="0" Title="" Margin="-10,-25,-10,15" CanSwap="False" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="-10,0,0,0" FontSize="14" FontWeight="Bold" 
+                    Text="泥嚎(*´▽｀)ノノ，欢迎来到KukeMC！" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,0"
+                    Text="你说的对，但是KukeMC是一个温馨和谐的服务器，提供了稳定流畅的体验，自从2023开服以来我们努力创建一个环境良好更公平公正的游戏氛围，和玩家们一起度过了很多愉快的时光,在这里的日子将会是你值得回忆的美好。
+我们保证不做影响平衡、破坏公平的行为。欢迎玩家提出意见或者举报违规行为，请大家自觉遵守游戏规则。" />
+    </StackPanel>
+</local:MyCard>
+
+<Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="0.97*" /> <!-- 自动宽度，用于左侧卡片 -->
+        <ColumnDefinition Width="0.05*" /> <!-- 剩余空间，用于分隔两张卡片 -->
+        <ColumnDefinition Width="1*" /> <!-- 自动宽度，用于右侧卡片 -->
+    </Grid.ColumnDefinitions>
+    <local:MyCard Grid.Column="0" Title="我的信誉分" Margin="0,-5,0,15" CanSwap="False" IsSwaped="False">
+        <StackPanel Margin="25,40,23,15">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270" /> <!-- 固定宽度 -->
+                    <ColumnDefinition Width="120" /> <!-- 固定宽度 -->
+                </Grid.ColumnDefinitions>
+                <local:MyTextBox HintText="请输入您的账号" Margin="0,0,0,17" Height="30" Grid.Column="0"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="270" /> <!-- 固定宽度 -->
+                    <ColumnDefinition Width="120" /> <!-- 固定宽度 -->
+                </Grid.ColumnDefinitions>
+                <local:MyTextBox HintText="请输入您的密码" Margin="0,0,0,10" Height="30" Grid.Column="0"/>
+            </Grid>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="0,10,0,0">
+                <local:MyTextButton FontSize="12" Foreground="#808080" Text="没有账号？点击注册" 
+                                   Width="120" Height="30" Padding="0,0,0,0" Margin="0,15,0,0" 
+                                   EventType="打开网页" EventData="https://kuke.ink"/>
+                <local:MyButton Text="点击登录" Width="120" Height="30" Padding="0,0,0,0" Margin="30,0,0,0" ColorType="Highlight"/>
+            </StackPanel>
+        </StackPanel>
+    </local:MyCard>
+
+<local:MyCard Grid.Column="2"  Title="服务器公告" Margin="0,-5,0,15" CanSwap="False" IsSwaped="False">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock Margin="0,0,0,4"
+                    Text="喜报，KukeMC跑路了" />
+    </StackPanel>
+</local:MyCard>
+</Grid>
+
+<local:MyCard Title="服务器人数信息" Margin="0,0,0,15" CanSwap="True" IsSwaped="True">
+	<StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4"
+                    Text="群组服: {人数}" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4"
+                    Text="避暑山庄: 13/4202" />
+
+	    </StackPanel>
+</local:MyCard>
+
+<StackPanel>
+    <Border Background="#A0FFFFFF" Height="130" Margin="-25,0,-25,-20"
+        BorderThickness="0,2,0,0" BorderBrush="{DynamicResource ColorBrush3}">
+        <StackPanel Margin="40,15,0,20">
+            <TextBlock Text="KukeMC服务器主页" Foreground="{DynamicResource ColorBrush3}" FontSize="16" Margin="0,5,5,5" />
+            <TextBlock>主页版本：1.0.0-bate                    
+                <LineBreak />
+                官方Q群：940335608
+                <LineBreak />
+                KukeMC服务器官网: <Underline>
+                    <local:MyTextButton Margin="0,0,0,-3" EventType="打开网页"
+                        Text="https://kuke.ink"  
+                        EventData="https://kuke.ink"  
+                        ToolTip="点击进入" />
+                </Underline>
+            </TextBlock>
+        </StackPanel>
+    </Border>
+</StackPanel>
+
